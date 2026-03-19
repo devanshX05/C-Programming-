@@ -19,7 +19,7 @@ void push(int item){
     }
 
     newnode->value = item;
-    newnode->ptr = top;
+    newnode->ptr = top;//creating a new value and linking it to its pre top and then updating it to top
     top = newnode;
 
     printf("Item pushed: %d\n", item);

@@ -26,7 +26,7 @@ void insert_position(struct node **head, int item, int pos) {
         return;
     }
 
-    temp = *head;
+    temp = *head; //important line
 
     /* Traverse to position-1 */
     for (i = 1; i < pos - 1 && temp != NULL; i++) {//moving the temp just before the insertion position. 
