@@ -15,13 +15,12 @@ void insert_end(int item){
     }
     new->value=item;
     new->next=NULL;
-    new->pre=NULL;
-
+    new->pre=NULL;//aabhi ye just pada hua hai NULL 
     if(head==NULL){
         head=new;
         return;
     }
-    temp=head; //traversing
+    temp=head; //traversing to last
     while(temp->next!=NULL){
         temp=temp->next;
     }

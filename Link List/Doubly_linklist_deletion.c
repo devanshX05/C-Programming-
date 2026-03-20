@@ -45,10 +45,11 @@ void delete_beginning() {
     }
 
     temp = head;
-    head = head->next;
+    head = temp->next;
 
     if (head != NULL) {
         head->pre = NULL;//deletion from beginning mei head node ke phele wle ko null declare krenge
+        //program ko bata rahe hai ki head ke oehle ab kuch nahi hai (after updating)
     }
 
     free(temp);

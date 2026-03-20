@@ -46,7 +46,7 @@ void delete_end() {
 
     if (head->next == NULL) {
         free(head);
-        head = NULL;
+        head = NULL; //case for only 1 node in deletion form end in a singly link list
         return;
     }
 
