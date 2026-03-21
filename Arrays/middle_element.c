@@ -1,27 +1,28 @@
 #include<stdio.h>
 int main(){
-    int arr[20],n;
+    int arr[20], n;
     printf("enter the number of elements of an array:");
     scanf("%d",&n);
     for (int i =0;i<n;i++){
         printf("Enter the element no.%d:",i+1);
         scanf("%d",&arr[i]);
     }
-    printf("\n");
     for(int i=0;i<n;i++){
         printf("%d ",arr[i]);
     }
     printf("\n");
-    int sum=0;
-    for(int i=0;i<n;i++){
-        sum=sum+arr[i];
+    int count =0;
+    for (int i =0;i<n;i++){
+        count++;
     }
-    int avg=sum/n;
-    for(int i=0;i<n;i++){
-        arr[i]=arr[i]+avg;
+    if(n%2!=0){
+        int x=(count/2);//c is the index
+        printf("%d",arr[x]);
     }
-    for (int i=0;i<n;i++){
-        printf("%d ",arr[i]);
+    else{
+        int y=(count/2);
+        int z=y-1;
+        printf("%d,%d",arr[y],arr[z]);
     }
     return 0;
 }

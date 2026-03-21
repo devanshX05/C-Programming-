@@ -42,15 +42,16 @@ void delete_position(struct node **head, int pos) {
         return;
     }
 
-    temp = *head;
     /* If deleting first node */
     if (pos == 1) {
+        temp=*head;
         *head = temp->ptr;
         free(temp);
         return;
     }
 
     /* Traverse to the node before the position */
+    temp=*head;
     for (i = 1; i < pos - 1; i++) {
         temp = temp->ptr;
 
