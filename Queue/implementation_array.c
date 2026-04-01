@@ -25,7 +25,7 @@ void dequeue(){
         printf("Deleted item:%d",arr[front]);//deletion take place from front
         front++;
         if(front>rear){ //this is generally a invalid state 
-            front=rear=-1;
+            front=rear=-1; //so we reset it, as the stack is empty so we set it to -1
         }
     }
 }
