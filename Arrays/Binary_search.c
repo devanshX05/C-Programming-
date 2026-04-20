@@ -21,7 +21,7 @@ int binarySearch(int arr[], int size, int target) {
 
 int main() {
     int arr[] = {2, 4, 6, 8, 10, 12, 14};
-    int size = sizeof(arr) / sizeof(arr[0]);
+    int size = sizeof(arr) / sizeof(arr[0]); //number of elements = total size / size of one element
     int target = 10;
 
     int result = binarySearch(arr, size, target);

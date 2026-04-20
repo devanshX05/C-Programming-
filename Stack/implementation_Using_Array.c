@@ -37,7 +37,7 @@ int main(){
         switch (choice)
         {
          case 1:
-            printf("Enter value to push: ");
+            printf("Enter value: ");
             scanf("%d", &item);
             push(item);
             break;
