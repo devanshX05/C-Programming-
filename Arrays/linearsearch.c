@@ -12,7 +12,7 @@ int main(){
     scanf("%d",&key);  //jo elemnt enter kr rahe hai usse key denote kr rahe hai
     for(int i=0;i<n;i=i+1){
         if(arr[i]==key){
-            printf("The elemrnt %d foud at %d\n",key,i+1);
+            printf("The element %d foud at %d\n",key,i+1);
             found=1;
             break;
         }

@@ -15,8 +15,8 @@ void enqueue(int item){
     temp->value = item;
     temp->ptr = NULL;//it will be the last node, as insertion take place form rear
 
-    if(front == NULL && rear == NULL){ //queue is empty 
-        front = rear = temp;//hence the new node is at the end as well as rear
+    if(front == NULL && rear == NULL){ 
+        front = rear = temp;          //hence the new node is at the end as well as rear
     }
     else{
         rear->ptr = temp;//Link the current last node to the new node
