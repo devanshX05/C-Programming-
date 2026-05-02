@@ -35,7 +35,6 @@ void printList(struct Node* head) {
         printf("%d -> ", head->data);
         head = head->next;
     }
-    printf("NULL\n");
 }
 
 // Your merge function (recursive)
