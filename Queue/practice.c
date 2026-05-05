@@ -1,40 +1,44 @@
 #include<stdio.h>
-struct node{
-    struct node *ptr;
-    int value;
-};
-struct node *front = NULL, *rear = NULL;
-
+#define size 10
+int a[size];
+int top1=-1,top2=-1;
 void enqueue(int item){
-    struct node *new;
-    new=(struct node*)malloc(sizeof(struct node));
-    if(new==NULL){
-        printf("Memeory not alloacted");
+    if(top1==size-1){
+        printf("overflow");
         return;
     }
-    new->value=item;
-    new->ptr=NULL;
-
-    if(front==rear){
-        front=rear=new;
-    }
-    else{
-        rear->ptr=new;
-        rear=new;
-    }
+    top1=top1+1;
+    a[top1]=item;
+    printf("Enqueue done\n");
 }
-void dequeue(){
-    struct node *temp;
-    if(front==-1 && rear==-1){
-        printf("Queue Empty");
-        return;
+int dequeue(){
+    if(top1==-1 &&top2==-1){
+        printf("Dequeue not possible");
+        return -1;
     }
-    temp=front;
-    if(front==rear){
-        front=rear=-1; 
+    if(top2==-1){
+        while (top1!=-1)
+        {
+            int value=a[top1];
+            top1=top1-1;
+            top2=top2+1;
+            a[top2]=value;
+             
+        }
+        
     }
-    else{
-        temp->ptr=front;
-        free(temp);
-    }
+    int ans=a[top2];
+    top2=top2-1;
+    return ans;
+}
+int main(){
+    enqueue(1);
+    enqueue(2);
+    enqueue(3);
+    printf("Dequeued:%d\n",dequeue());
+    printf("Dequeued:%d\n",dequeue());
+    enqueue(4);
+    printf("Dequeued:%d\n",dequeue());
+
+    return 0;
 }
