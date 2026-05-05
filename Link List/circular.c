@@ -2,67 +2,73 @@
 #include <stdlib.h>
 
 struct node {
-    int data;
-    struct node *next;
+    int value;
+    struct node *ptr;
 };
 
-struct node *head = NULL;
+/* Insert node at beginning */
+void insert_beginning(struct node **head, int item) {
+    struct node *new;
 
-// Function to create circular linked list
-void create(int n) {
-    struct node *newnode, *temp;
-    int i, value;
-
-    for(i = 1; i <= n; i++) {
-        newnode = (struct node*)malloc(sizeof(struct node));
-
-        printf("Enter data %d: ", i);
-        scanf("%d", &value);
-
-        newnode->data = value;
-        newnode->next = NULL;
-
-        if(head == NULL) {
-            head = newnode;
-            temp = newnode;
-        } else {
-            temp->next = newnode;
-            temp = newnode;
-        }
+    new = (struct node*)malloc(sizeof(struct node));//malloc(sizeof *new);
+    if (new == NULL) {
+        printf("Memory not allocated\n");
+        exit(0);
     }
-
-    // make circular
-    temp->next = head;
+ 
+    new->value = item;
+    new->ptr = *head;//You want to point to the current first node, not to the address of the pointer.
+    *head = new;
 }
 
-// Function to display list
-void display() {
+void circular(struct node **head){
     struct node *temp;
+    if(*head==NULL){
+        return; 
+    }
+    temp=*head;
+    while(temp->ptr!=NULL && temp->ptr!=*head){
+        temp=temp->ptr;
+    }
+    temp->ptr=*head;
 
-    if(head == NULL) {
-        printf("List is empty\n");
+}
+
+
+
+/* Display the linked list */
+void circulardisplay(struct node *head) { 
+    struct node *temp;
+    if(head==NULL){
         return;
     }
-
-    temp = head;
-    do {
-        printf("%d -> ", temp->data);
-        temp = temp->next;
-    } while(temp != head);
-
-    printf("(back to head)\n");
+    temp=head;
+    do{
+        printf("%d ",temp->value);
+        temp=temp->ptr;
+        
+    }while(temp!=head);
 }
 
 int main() {
-    int n;
+    struct node *head = NULL;//It is telling the program: “The linked list is empty right now.”
+    int n, value;
 
-    printf("Enter number of nodes: ");
+    printf("How many nodes do you want to insert? ");
     scanf("%d", &n);
 
-    create(n);
+    for (int i = 0; i < n; i++) {
+        printf("Enter value for node %d: ", i + 1);
+        scanf("%d", &value);
+        insert_beginning(&head, value);
+    }
 
-    printf("Circular Linked List: ");
-    display();
+    printf("\nLinked List:\n");
+    circular(&head);
+    circulardisplay(head);
 
     return 0;
 }
+
+
+
