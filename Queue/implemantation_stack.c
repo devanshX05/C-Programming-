@@ -13,7 +13,7 @@ void enqueue(int x) {
     }
 
     top1 = top1 + 1;
-    s1[top1] = x;
+    s1[top1] = x; 
 }
 
 // Dequeue (pop from stack2)
