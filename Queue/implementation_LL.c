@@ -39,7 +39,7 @@ void dequeue(){
         front = rear = NULL; //after removing that single node the queue becomes empty
     }
     else{ //this is the condition when more than one element exist
-        front = front->ptr;
+        front = temp->ptr;
     }
 
     printf("Value dequeued is %d\n", temp->value);
