@@ -36,7 +36,7 @@ void display(struct node *head){
 void bubble(struct node *head){
     struct node *i,*j;
     for(i=head;i!=NULL;i=i->ptr){
-        for(j=head;j->ptr!=NULL;j=j->ptr){
+        for(j=head;j->ptr!=NULL;j=j->ptr){ //because when j reaches the last node, j->ptr becomes NULL.
             if(j->value > j->ptr->value){
                 int temp=j->value;
                 j->value=j->ptr->value;
