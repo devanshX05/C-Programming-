@@ -33,7 +33,7 @@ void insert_ending(int item) {
     }
 
     temp->next = newnode;
-    newnode->pre = temp;
+    
 }
 
 void delete_end() {

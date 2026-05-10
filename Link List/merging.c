@@ -63,7 +63,7 @@ int main() {
     int n, x;
 
     // Input first list
-    printf("Enter number of elements in List 1: ");
+        printf("Enter number of elements in List 1: ");
     scanf("%d", &n);
     printf("Enter elements (sorted):\n");
     for (int i = 0; i < n; i++) {
