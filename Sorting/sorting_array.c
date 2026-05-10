@@ -58,7 +58,7 @@
 #include <stdio.h>
 
 void quick_sort(int arr[], int start, int end) {
-    if (start >= end)   // ✅ base condition
+    if (start >= end)   
         return;
 
     int pivot = arr[start];

@@ -1,44 +1,28 @@
 #include<stdio.h>
 #define size 10
 int a[size];
-int top1=-1,top2=-1;
-void enqueue(int item){
-    if(top1==size-1){
-        printf("overflow");
+int front=-1,rear=-1;
+void enqueu(int item){
+    if(front==-1 && rear==-1){
+        front=0;
+    }
+    if((rear+1)%size==front){
+        printf("Overflow");
+    }
+    rear=(rear+1)%size;
+    a[rear]=item;
+    printf("Enqueu done");
+
+}
+void dequeue(){
+    if(front==-1 && rear==-1){
+        printf("Empty");
         return;
     }
-    top1=top1+1;
-    a[top1]=item;
-    printf("Enqueue done\n");
-}
-int dequeue(){
-    if(top1==-1 &&top2==-1){
-        printf("Dequeue not possible");
-        return -1;
+    if(front==rear){
+        front=rear=-1;
     }
-    if(top2==-1){
-        while (top1!=-1)
-        {
-            int value=a[top1];
-            top1=top1-1;
-            top2=top2+1;
-            a[top2]=value;
-             
-        }
-        
-    }
-    int ans=a[top2];
-    top2=top2-1;
-    return ans;
-}
-int main(){
-    enqueue(1);
-    enqueue(2);
-    enqueue(3);
-    printf("Dequeued:%d\n",dequeue());
-    printf("Dequeued:%d\n",dequeue());
-    enqueue(4);
-    printf("Dequeued:%d\n",dequeue());
+    printf("Dequeue done");
+    front=(front+1)%size;
 
-    return 0;
 }
