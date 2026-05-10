@@ -40,8 +40,8 @@ int main(){
             max=arr[i];
         }
     }
-    for(int i=0;i<=4;i=i+1){
-        if(max!=arr[i] && smax<arr[i]){
+    for(int i=0;i<=4;i=i+1){ //arr[i] will be consisdered as the second largest element
+        if(max!=arr[i] && smax<arr[i]){ //max != arr[i] is there to make sure the largest element itself is not considered as the second largest.
             smax=arr[i];
         }
     }

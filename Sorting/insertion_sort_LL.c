@@ -11,7 +11,7 @@ void end(int item){
     if(new==NULL){
         printf("No alloaction");
     }
-    new->value=item;
+    new->value=item; 
     new->ptr=NULL;
     new->pre=NULL;
     if(head==NULL){
