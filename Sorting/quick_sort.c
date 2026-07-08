@@ -11,7 +11,7 @@ void quickSort(int arr[], int start, int end) {
 
     while (i < j) {
         // move i forward
-        while (arr[i] <= pivot && i < end)
+        while (arr[i] <= pivot && i < end) //here i is the index and arr[i] is the value
             i++;
 
         // move j backward
