@@ -32,15 +32,15 @@ void middle(struct node *head,int n){
     for(int i=0;i<=n/2;i++){
         temp=temp->ptr;
     }
-    printf("Middle element:%d",&temp->value);
-    printf("Middle element:%d",&temp->ptr->value);
+    printf("Middle element:%d",temp->value);
+    printf("Middle element:%d",temp->ptr->value);
     }
     else
         {
-        for(int i=0;i<=n/2+1;i++){
+        for(int i=0;i<n/2;i++){
             temp=temp->ptr;
         }
-        printf("Middle element:%d",&temp->value);
+        printf("Middle element:%d",temp->value);
     }
     
     
@@ -52,7 +52,9 @@ int main(){
     printf("Enter the value of nodes\n");
     for(int i=1;i<=n;i++){
         scanf("%d",&value);
+        insert_end(&head,value);
     }
+    
     middle(head,n);
     
 }
