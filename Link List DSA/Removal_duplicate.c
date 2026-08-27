@@ -31,7 +31,7 @@ void duplicate(int n){
     for(i=temp;i!=NULL;i=i->next){
         j=i->next;
         while(j!=NULL){
-            if(j->value==temp->value){
+            if(j->value==i->value){
                temp=j;
                j=j->next;
                temp->pre->next=temp->next; //equivalent to a[k]=a[k+1]
